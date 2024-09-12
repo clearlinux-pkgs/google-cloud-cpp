@@ -1,0 +1,4 @@
+# Make source packages available in download target directories
+for src in /builddir/build/SOURCES/*.tar.gz; do
+	ln -sf $src external/googleapis/src/
+done
