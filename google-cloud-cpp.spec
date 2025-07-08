@@ -6,10 +6,10 @@
 # autospec commit: 65cf152
 #
 Name     : google-cloud-cpp
-Version  : 2.38.0
-Release  : 13
-URL      : https://github.com/googleapis/google-cloud-cpp/archive/v2.38.0/google-cloud-cpp-2.38.0.tar.gz
-Source0  : https://github.com/googleapis/google-cloud-cpp/archive/v2.38.0/google-cloud-cpp-2.38.0.tar.gz
+Version  : 2.39.0
+Release  : 14
+URL      : https://github.com/googleapis/google-cloud-cpp/archive/v2.39.0/google-cloud-cpp-2.39.0.tar.gz
+Source0  : https://github.com/googleapis/google-cloud-cpp/archive/v2.39.0/google-cloud-cpp-2.39.0.tar.gz
 Source1  : https://github.com/googleapis/googleapis/archive/6a474b31c53cc1797710206824a17b364a835d2d.tar.gz
 Summary  : @GOOGLE_CLOUD_CPP_PC_DESCRIPTION@
 Group    : Development/Tools
@@ -68,19 +68,19 @@ license components for the google-cloud-cpp package.
 
 
 %prep
-%setup -q -n google-cloud-cpp-2.38.0
+%setup -q -n google-cloud-cpp-2.39.0
 cd %{_builddir}
 tar xf %{_sourcedir}/6a474b31c53cc1797710206824a17b364a835d2d.tar.gz
-cd %{_builddir}/google-cloud-cpp-2.38.0
+cd %{_builddir}/google-cloud-cpp-2.39.0
 mkdir -p external/googleapis
-cp -r %{_builddir}/googleapis-6a474b31c53cc1797710206824a17b364a835d2d/. %{_builddir}/google-cloud-cpp-2.38.0/external/googleapis
+cp -r %{_builddir}/googleapis-6a474b31c53cc1797710206824a17b364a835d2d/. %{_builddir}/google-cloud-cpp-2.39.0/external/googleapis
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1749569164
+export SOURCE_DATE_EPOCH=1752015904
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -119,7 +119,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1749569164
+export SOURCE_DATE_EPOCH=1752015904
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/google-cloud-cpp
 cp %{_builddir}/google-cloud-cpp-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/google-cloud-cpp/7df059597099bb7dcf25d2a9aedfaf4465f72d8d || :
@@ -462,11 +462,11 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libgoogle_cloud_cpp_common.so.2
-/usr/lib64/libgoogle_cloud_cpp_common.so.2.38.0
+/usr/lib64/libgoogle_cloud_cpp_common.so.2.39.0
 /usr/lib64/libgoogle_cloud_cpp_rest_internal.so.2
-/usr/lib64/libgoogle_cloud_cpp_rest_internal.so.2.38.0
+/usr/lib64/libgoogle_cloud_cpp_rest_internal.so.2.39.0
 /usr/lib64/libgoogle_cloud_cpp_storage.so.2
-/usr/lib64/libgoogle_cloud_cpp_storage.so.2.38.0
+/usr/lib64/libgoogle_cloud_cpp_storage.so.2.39.0
 
 %files license
 %defattr(0644,root,root,0755)
